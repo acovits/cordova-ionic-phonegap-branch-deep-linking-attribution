@@ -48,7 +48,7 @@ SOFTWARE.
 
   <!-- JavaScript -->
   <js-module src="src/index.js" name="Branch">
-    <clobbers target="Branch" />
+    <clobbers target="cordova.plugins.Branch" />
   </js-module>
 
   <!-- Android -->
