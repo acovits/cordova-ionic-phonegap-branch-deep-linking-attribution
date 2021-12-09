@@ -1,9 +1,10 @@
-var exec = require("cordova/exec");
-var deviceVendor =
-  typeof window.clientInformation != "undefined" &&
-  typeof window.clientInformation.vendor != "undefined"
-    ? window.clientInformation.vendor
-    : "unknownVendor";
+var _exec = require("cordova/exec");
+function exec(os, of, s, a, args) {
+  console.info("CDV", s, a, args);
+  _exec(os, of, s, a, args);
+}
+
+var deviceVendor = typeof window.clientInformation != "undefined" && typeof window.clientInformation.vendor != "undefined" ? window.clientInformation.vendor : "unknownVendor";
 
 // SDK Class
 var API_CLASS = "BranchSDK";
@@ -45,7 +46,7 @@ function execute(method, params) {
 
   if (method == "getStandardEvents") {
     return new Promise(function promise(resolve, reject) {
-      resolve(standardEvent);  
+      resolve(standardEvent);
     });
   }
 
